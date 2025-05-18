@@ -60,7 +60,7 @@ The plugin is ready for translation and uses the `__()` and `esc_html__()` funct
 ## ✍️ Author
 
 **Rafy**  
-https://rafy.site
+https://rafy.com.br
 
 ## 📜 License
 
