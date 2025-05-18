@@ -1,24 +1,33 @@
 <?php
 /**
- * FAQreator – Guided FAQ Generator
- *
+ * FAQreator
+ * 
+ * Guided AI-based FAQ generator for your custom post types.
+ * 
+ * @link              https://rafy.com.br/project/faqreator
+ * @since             1.0.0
  * @package           RafyCo\FAQreator
+ * @author            Rafy Co.
+ * @license           GPL-2.0-or-later
+ *
  * @wordpress-plugin
  * Plugin Name:       FAQreator
  * Plugin URI:        https://rafy.site/projects/faqreator
  * Description:       Guided AI-based FAQ generator for your custom post types.
- * Version:           1.0.0
+ * Version:           0.2.6
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Rafy
  * Author URI:        https://rafy.site
- * Text Domain:       faqreator
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Update URI:        https://rafy.site/projects/faqreator
+ * Text Domain:       faqreator
+ * Domain Path:       /languages
+ * Update URI:        https://github.com/RafyWP/faqreator/tree/master
+ * Network:           true
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+defined( 'ABSPATH' ) || exit;
 
 class FAQreator {
 	private static $instance = null;
