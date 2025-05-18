@@ -1,68 +1,68 @@
 # FAQreator
 
-**FAQreator** é um plugin WordPress que gera automaticamente perguntas e respostas frequentes (FAQs) para seus posts usando a API da OpenAI. Ideal para criadores de conteúdo que desejam melhorar a compreensão do público e o SEO de suas páginas.
+**FAQreator** is a WordPress plugin that automatically generates frequently asked questions (FAQs) for your posts using the OpenAI API. Perfect for content creators looking to enhance audience comprehension and improve their page SEO.
 
-## 📦 Funcionalidades
+## 📦 Features
 
-- Geração automática de FAQs com base no título e resumo do post.
-- Integração com o modelo de linguagem da OpenAI.
-- Relacionamento dinâmico entre posts e FAQs.
-- Suporte a campos personalizados via ACF (Advanced Custom Fields).
-- Interface de administração para configurar a API, modelo, parâmetros e mensagens de erro.
-- Shortcode para exibir FAQs no frontend.
-- Suporte a internacionalização com domínio `faqreator`.
+- Automatic generation of FAQs based on post title and summary.
+- Integration with OpenAI language model.
+- Dynamic relationship between posts and FAQs.
+- Support for custom fields via ACF (Advanced Custom Fields).
+- Admin interface to configure API, model, parameters, and error messages.
+- Shortcode to display FAQs on the frontend.
+- Internationalization support with `faqreator` domain.
 
-## 🔧 Requisitos
+## 🔧 Requirements
 
-- WordPress 5.2 ou superior  
-- PHP 7.2 ou superior  
-- Uma chave da API OpenAI válida
+- WordPress 5.2 or higher  
+- PHP 7.2 or higher  
+- A valid OpenAI API key
 
-## 🚀 Instalação
+## 🚀 Installation
 
-1. Faça upload do plugin para a pasta `/wp-content/plugins/faqreator` ou instale diretamente via painel do WordPress.
-2. Ative o plugin.
-3. Vá em **Configurações > FAQreator** e preencha os campos obrigatórios:
-   - Chave da API OpenAI
-   - Token de autenticação
-   - Tipo de post a ser analisado
-   - Tipo de post para as perguntas
-   - Quantidade de FAQs a gerar
-   - Modelo, temperatura, tokens, timeout
-   - Mensagens de erro personalizadas
+1. Upload the plugin to the `/wp-content/plugins/faqreator` folder or install directly via WordPress dashboard.
+2. Activate the plugin.
+3. Go to **Settings > FAQreator** and fill in the required fields:
+   - OpenAI API key
+   - Authentication token
+   - Post type to be analyzed
+   - Post type for questions
+   - Number of FAQs to generate
+   - Model, temperature, tokens, timeout
+   - Custom error messages
 
-## 🧠 Como funciona
+## 🧠 How it works
 
-Ao acessar a rota REST `/wp-json/faqreator/v1/generate-faqs/` com `post_id` e `token` válidos, o plugin coleta o título e o resumo (ou os primeiros 400 caracteres) do post e envia para a OpenAI.
+When accessing the REST route `/wp-json/faqreator/v1/generate-faqs/` with valid `post_id` and `token`, the plugin collects the title and summary (or the first 400 characters) of the post and sends it to OpenAI.
 
-A resposta com as perguntas e respostas é salva como posts do tipo definido (ex: `question`), vinculados ao post original (ex: `post`) por um campo relacional.
+The response with questions and answers is saved as posts of the defined type (e.g., `question`), linked to the original post (e.g., `post`) by a relational field.
 
 ## 🧾 Shortcode
 
-Use o shortcode abaixo dentro de qualquer post singular para exibir as FAQs associadas:
+Use the shortcode below inside any singular post to display associated FAQs:
 
 [faqreator]
 
-## 🔁 Gatilho manual (via código)
+## 🔁 Manual trigger (via code)
 
-Você pode acionar a geração de FAQs manualmente:
+You can trigger FAQ generation manually:
 
-do_action( 'faqreator_generate_faq_event', $post_id, 'seu_token' );
+do_action( 'faqreator_generate_faq_event', $post_id, 'your_token' );
 
-## 🛡 Segurança
+## 🛡 Security
 
-As requisições são protegidas por um token de autenticação definido na tela de configurações. Sem o token correto, o acesso à rota de geração será negado (`401 Unauthorized`).
+Requests are protected by an authentication token defined in the settings screen. Without the correct token, access to the generation route will be denied (`401 Unauthorized`).
 
-## 🗣 Tradução
+## 🗣 Translation
 
-O plugin está pronto para tradução e utiliza as funções `__()` e `esc_html__()` com o domínio de texto `faqreator`.
+The plugin is ready for translation and uses the `__()` and `esc_html__()` functions with the `faqreator` text domain.
 
-## ✍️ Autor
+## ✍️ Author
 
 **Rafy**  
 https://rafy.site
 
-## 📜 Licença
+## 📜 License
 
-GPL v2 ou posterior  
+GPL v2 or later  
 http://www.gnu.org/licenses/gpl-2.0.txt
